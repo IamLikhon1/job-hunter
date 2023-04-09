@@ -1,9 +1,16 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import ShowData from '../ShowData.jsx/ShowData';
+import CardsShow from '../CardShow/CardsShow';
 
 const Home = () => {
     const loadData=useLoaderData()
+    const [cardData,setCardData]=useState([])
+    useEffect(()=>{
+        fetch('cardData.json')
+        .then(res=>res.json())
+        .then(data=>setCardData(data))
+    },[])
     return (
         <div>
             {/* Banner section start */}
@@ -40,6 +47,30 @@ const Home = () => {
             </div>
 
             {/* Job Category List ends*/}
+
+            {/* Featured Jobs section start */}
+                <div className='mt-36'>
+                    <div className='text-center'>
+                    <h1 className='text-5xl font-semibold'>
+                    Featured Jobs
+                    </h1>
+                    <p className='text-xl font-light mt-5'>Explore thousands of job opportunities with all the information you need. Its your future</p>
+                    </div>
+                    <div className='grid md:grid-cols-2 gap-10 mt-20 md:mx-44 mb-10'>
+                        {
+                            cardData.map(cards=><CardsShow
+                            cards={cards}
+                            key={cards.id}
+                            ></CardsShow>)
+                        }
+                    </div>
+                   <div className='text-center mt-12 mb-20'>
+                   <button className='nav-btn'>Show All Job</button>
+                   </div>
+                </div>
+
+
+            {/* Featured Jobs section ends */}
 
             
         </div>
