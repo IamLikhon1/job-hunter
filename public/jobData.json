@@ -2,18 +2,26 @@
 [
     {
     "name":"Account & Finance",
-    "jobs":"300 Jobs Available" 
+    "jobs":"300 Jobs Available",
+    "id":"1",
+    "img":"https://img.freepik.com/premium-vector/calculator-with-modern-flat-style_3322-74.jpg?w=740" 
     },
     {
     "name":"Creative Design",
-    "jobs":"100+ Jobs Available" 
+    "jobs":"100+ Jobs Available",
+    "id":"2",
+    "img":"https://img.freepik.com/premium-vector/light-bulb-with-rays-lighting-electric-lamp-creative-idea-solution-thinking-concept_435184-915.jpg?w=740"
     },
     {
-    "name":"Account & Finance",
-    "jobs":"300 Jobs Available" 
+    "name":"Marketing & Sales",
+    "jobs":"300 Jobs Available" ,
+    "id":"3",
+    "img":"https://img.freepik.com/free-vector/mobile-marketing-concept-illustration_114360-1497.jpg?w=740&t=st=1681060356~exp=1681060956~hmac=f327af9816027b642fb97e853a69542cb31afd2eccdfad0de10dc7f908b304c0" 
     },
     {
-    "name":"Account & Finance",
-    "jobs":"224 Jobs Available" 
+    "name":"Engineering Job",
+    "jobs":"224 Jobs Available",
+    "id":"4",
+    "img":"https://img.freepik.com/free-vector/flat-engineering-construction-illustrated_23-2148892788.jpg?w=740&t=st=1681060409~exp=1681061009~hmac=acfa6618fd48d444b2abef67846d0d2ecd51a67a75ba835bb2f2ff37a6958bd8"  
     }
 ]
