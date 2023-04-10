@@ -1,10 +1,11 @@
 import React from 'react';
 import { MapPinIcon,CurrencyDollarIcon } from '@heroicons/react/24/solid'
+import { Link } from 'react-router-dom';
 
 
 const CardsShow = ({cards}) => {
-    console.log(cards);
-    const{logo,title,name,job,time,location,salary}=cards
+    // console.log(cards);
+    const{logo,title,name,job,time,location,salary,id}=cards
     return (
         <div>
             {/* Featured Jobs started here */}
@@ -30,13 +31,9 @@ const CardsShow = ({cards}) => {
 
                     </div>
                 </div>
-                    <button className='nav-btn mt-5'>View Details</button>
-
+                   <Link to={`/ShowDetails/${id}`}> <button className='nav-btn mt-5'>View Details</button></Link>
                </div>
             </div>
-
-       
-
             {/* Featured Jobs ends here */}
             
         </div>
