@@ -12,11 +12,13 @@ import ShowDetails from './components/ShowDetails/ShowDetails';
 import Blog from './components/Blog/Blog';
 import Statistics from './components/Statistics/Statistics';
 import Applied from './components/Applied/Applied';
+import ErrorPage from './ErrorPage';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Main></Main>,
+    errorElement: <ErrorPage />,
     children:[
       {
         path:"/",
@@ -40,6 +42,10 @@ const router = createBrowserRouter([
         path:"applied",
         element:<Applied></Applied>
       },
+      {
+        path:'*',
+        element:<Error></Error>
+      }
     ]
   },
 ]);

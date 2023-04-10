@@ -1,12 +1,17 @@
 import React, { useEffect, useState } from 'react';
-import { useLoaderData, useParams } from 'react-router-dom';
+import { Link, useLoaderData, useParams } from 'react-router-dom';
 import { MapPinIcon,CurrencyDollarIcon,BriefcaseIcon,PhoneIcon,AtSymbolIcon} from '@heroicons/react/24/solid'
-
 
 const ShowDetails = () => {
     const param=useParams()
     const loader=useLoaderData()
     const [state, setState]=useState({})
+
+    const handleBtn=id=>{
+      console.log(id);
+    }
+
+    
     useEffect(()=>{
         const singleData=loader.find(d=>d.id==param.CardId)
         if(singleData){
@@ -62,7 +67,7 @@ const ShowDetails = () => {
 
                </div>
               <div className='md:relative left-8'>
-              <button  className='nav-btn mt-7 mb-5 w-full '>Apply Now</button>
+              <Link to='/applied'><button onClick={handleBtn} className='nav-btn mt-7 mb-5 w-full '>Apply Now</button></Link>
 
               </div>
             </div>
