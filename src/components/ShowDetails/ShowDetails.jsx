@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useLoaderData, useParams } from 'react-router-dom';
 import { MapPinIcon,CurrencyDollarIcon,BriefcaseIcon,PhoneIcon,AtSymbolIcon} from '@heroicons/react/24/solid'
+import { addToDb } from '../../utilis/FakeData';
 
 const ShowDetails = () => {
     const param=useParams()
@@ -9,6 +10,7 @@ const ShowDetails = () => {
 
     const handleBtn=id=>{
       console.log(id);
+      addToDb(id)
     }
 
     
@@ -17,6 +19,7 @@ const ShowDetails = () => {
         if(singleData){
          setState(singleData)
         }
+        
     },[])
     return (
         <div className='grid md:grid-cols-2 px-16 mt-20 gap-20'>
@@ -67,7 +70,7 @@ const ShowDetails = () => {
 
                </div>
               <div className='md:relative left-8'>
-              <Link to='/applied'><button onClick={handleBtn} className='nav-btn mt-7 mb-5 w-full '>Apply Now</button></Link>
+              <button onClick={()=>handleBtn(state.id)} className='nav-btn mt-7 mb-5 w-full '>Apply Now</button>
 
               </div>
             </div>

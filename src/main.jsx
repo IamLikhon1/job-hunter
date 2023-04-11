@@ -13,6 +13,7 @@ import Blog from './components/Blog/Blog';
 import Statistics from './components/Statistics/Statistics';
 import Applied from './components/Applied/Applied';
 import ErrorPage from './ErrorPage';
+import { productsAndCartData } from './loader/getCart&ProductsData';
 
 const router = createBrowserRouter([
   {
@@ -40,12 +41,9 @@ const router = createBrowserRouter([
       },
       {
         path:"applied",
-        element:<Applied></Applied>
+        element:<Applied></Applied>,
+        loader: productsAndCartData,
       },
-      {
-        path:'*',
-        element:<Error></Error>
-      }
     ]
   },
 ]);
