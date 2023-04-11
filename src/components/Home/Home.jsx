@@ -6,10 +6,14 @@ import CardsShow from '../CardShow/CardsShow';
 const Home = () => {
     const loadData=useLoaderData()
     const [cardData,setCardData]=useState([])
+    
+    
     useEffect(()=>{
         fetch('cardData.json')
         .then(res=>res.json())
-        .then(data=>setCardData(data))
+        .then(data=>{
+            setCardData(data);
+        })
     },[])
     return (
         <div>
@@ -58,14 +62,16 @@ const Home = () => {
                     </div>
                     <div className='grid md:grid-cols-2 gap-10 mt-20 md:mx-44 mb-10'>
                         {
-                            cardData.map(cards=><CardsShow
+                            cardData.slice(0,4).map((cards)=><CardsShow
                             cards={cards}
                             key={cards.id}
                             ></CardsShow>)
                         }
                     </div>
                    <div className='text-center mt-12 mb-20'>
-                   <button className='nav-btn'>Show All Job</button>
+                   
+                    <button  className='nav-btn'>Show All Job</button>
+                   
                    </div>
                 </div>
 

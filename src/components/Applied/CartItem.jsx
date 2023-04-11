@@ -5,7 +5,6 @@ import { Link} from 'react-router-dom';
 const CartItem = ({product}) => {
     const{id,name,logo,title,job,location,salary,time}=product;
     
-
     return (
         <div>
             {/* design part */}
@@ -32,7 +31,7 @@ const CartItem = ({product}) => {
                     </div>
 
                 </div>
-                <Link to=''><button className=' md:relative left-60 nav-btn'> View Details</button></Link>
+                <Link to={`/ShowDetails/${id}`}><button className=' md:relative left-60 nav-btn'> View Details</button></Link>
 
             </div>
 

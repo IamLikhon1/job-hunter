@@ -9,7 +9,7 @@ const ShowDetails = () => {
     const [state, setState]=useState({})
 
     const handleBtn=id=>{
-      console.log(id);
+      
       addToDb(id)
     }
 

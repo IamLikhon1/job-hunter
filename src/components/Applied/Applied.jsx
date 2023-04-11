@@ -5,7 +5,6 @@ import CartItem from './CartItem';
 
 const Applied = () => {
     const {initialCart}= useLoaderData()
-    console.log(initialCart);
     return (
         <div>
             {/* Banner section */}
